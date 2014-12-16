@@ -1,0 +1,13 @@
+# Site settings
+title: Центр подводного плавания Аквастиль 
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  В нашем дайвинг-центре вы можете пройти обучение дайвингу 
+  под руководством опытных инструкторов. Зимой занятия по дайвингу проводятся
+  в бассейне "Юбилейный", ул.40 лет Октября 31а.
+  Летом обучения дайвингу проходят на озере Увильды, база отдыха «Янтарь».
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://aqst.summerisgone.com" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
