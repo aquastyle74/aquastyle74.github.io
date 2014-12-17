@@ -2,22 +2,94 @@
 layout: default
 ---
 
-<div class="home">
+  <div id="slider" class="sl-slider-wrapper demo-2">
 
-  <h1 class="page-heading">Posts</h1>
+				<div class="sl-slider">
+				
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-1"></div>
+							<h2>A bene placito.</h2>
+							<blockquote><p>You have just dined, and however scrupulously the slaughterhouse is concealed in the graceful distance of miles, there is complicity.</p><cite>Ralph Waldo Emerson</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-2"></div>
+							<h2>Regula aurea.</h2>
+							<blockquote><p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p><cite>Albert Schweitzer</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-3"></div>
+							<h2>Dum spiro, spero.</h2>
+							<blockquote><p>Thousands of people who say they 'love' animals sit down once or twice a day to enjoy the flesh of creatures who have been utterly deprived of everything that could make their lives worth living and who endured the awful suffering and the terror of the abattoirs.</p><cite>Dame Jane Morris Goodall</cite></blockquote>
+						</div>
+					</div>
+					
+				</div><!-- /sl-slider -->
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+				<nav id="nav-dots" class="nav-dots">
+					<span class="nav-dot-current"></span>
+					<span></span>
+					<span></span>
+				</nav>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+			</div>
+			
+		
+<script src="/js/jquery.ba-cond.min.js"></script>
+<script src="/js/jquery.slitslider.js"></script>
+<script>
+$(function() {
+    var Page = (function() {
+        var $nav = $( '#nav-dots > span' ),
+            slitslider = $( '#slider' ).slitslider( {
+                onBeforeChange : function( slide, pos ) {
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+                    $nav.removeClass( 'nav-dot-current' );
+                    $nav.eq( pos ).addClass( 'nav-dot-current' );
 
-</div>
+                }
+            } ),
+
+            init = function() {
+
+                initEvents();
+
+            },
+            initEvents = function() {
+
+                $nav.each( function( i ) {
+
+                    $( this ).on( 'click', function( event ) {
+
+                        var $dot = $( this );
+
+                        if( !slitslider.isActive() ) {
+
+                            $nav.removeClass( 'nav-dot-current' );
+                            $dot.addClass( 'nav-dot-current' );
+
+                        }
+
+                        slitslider.jump( i + 1 );
+                        return false;
+
+                    } );
+
+                } );
+
+            };
+
+            return { init : init };
+
+    })();
+
+    Page.init();
+
+});
+</script>
