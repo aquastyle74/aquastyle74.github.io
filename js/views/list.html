@@ -1,0 +1,9 @@
+<h2>Альбомы</h2>
+
+
+<div ng-repeat="album in albums">
+    <a ng-href="#{{ album.id }}">
+        <img ng-src="{{ album.thumb_src }}" alt="{{ album.title }}">
+        <p>{{ album.title }}</p>
+    </a>
+</div>

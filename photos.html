@@ -1,0 +1,93 @@
+---
+layout: default
+---
+
+<div ng-app="photos">
+   <ng-view></ng-view>
+    
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.2/fotorama.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.2/fotorama.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-resource.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.js"></script>
+
+<script>
+(function() {
+    angular.module('photos', ['ngRoute', 'ngResource'])
+    .config(function($routeProvider, $locationProvider) {
+      $routeProvider
+       .when('/:albumId', {
+        templateUrl: '/js/views/album.html',
+        controller: 'AlbumController'
+      })
+      .when('/', {
+        templateUrl: '/js/views/list.html',
+        controller: 'ListController'
+      })
+      .otherwise({
+          redirectTo: '/'
+      });
+      // configure html5 to get links working on jsfiddle
+      $locationProvider.html5Mode(false);
+})
+    .controller('ListController', function($scope, $resource) {
+        var API = $resource('https://api.vk.com/method/:method', {
+            callback: 'JSON_CALLBACK'
+        }, {
+            get: {
+                method: 'JSONP'
+            }
+        });
+        API.get({
+            method: 'photos.getAlbums',
+            owner_id: '-16982169',
+            need_covers: 1,
+            v: '5.27'
+        }).$promise.then(function(data) {
+            $scope.albums = data.response.items;
+        })
+    })
+    .controller('AlbumController', function($scope, $resource, $routeParams) {
+        var API = $resource('https://api.vk.com/method/:method', {
+            callback: 'JSON_CALLBACK'
+        }, {
+            get: {
+                method: 'JSONP'
+            }
+        });
+        API.get({
+            method: 'photos.get',
+            owner_id: '-16982169',
+            album_id: $routeParams.albumId,
+            v: '5.27'
+        }).$promise.then(function(data) {
+            $scope.photos = data.response.items;
+        })
+    })
+    .directive('fotorama', function() {
+        return {
+            controller: function($element, $scope) {
+                $scope.$on('repeat.last', function() {
+                    $element.addClass('fotorama').fotorama();
+                });                
+            }
+        }
+    })
+    .directive('counterNotifier', function () {
+        return {
+            restrict: 'A',
+            link: function postLink(scope, element, attrs) {
+                if (scope.$last) {
+                    scope.$emit('repeat.last');
+                }
+                if (scope.$first) {
+                    scope.$emit('repeat.first');
+                }
+            }
+        };
+    })
+    
+})();
+</script>
