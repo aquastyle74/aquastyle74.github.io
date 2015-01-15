@@ -1,7 +1,11 @@
+<ol class="breadcrumb">
+	<li><a href="#">&larr; Список альбомов</a></li>
+</ol>
+
 <h2>Фото</h2>
 
 <div>
-   <a ng-href="{{ photo.photo_604 }}" ng-repeat="photo in photos" counter-notifier>
+   <a data-lightbox="album" ng-href="{{ photo.photo_604 }}" ng-repeat="photo in photos" counter-notifier>
     <img ng-src="{{ photo.photo_130 }}"  />   
    </a>    
 </div>

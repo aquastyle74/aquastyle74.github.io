@@ -26,7 +26,8 @@ $content-width:    800px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
-
+// Override bootstrap
+$font-family-sans-serif:  Arial, Helvetica, sans-serif;
 
 
 // Using media queries with like this:
@@ -50,5 +51,6 @@ $on-laptop:        800px;
     "layout",
     "bootstrap/bootstrap",
     "fontawesome/font-awesome",
-    "slslider"
+    "slslider",
+    "lightbox"
 ;

@@ -234,3 +234,14 @@
         }
     }
 }
+
+.album-list {
+    display: flex;
+    flex-wrap: wrap;
+    .thumbnail {
+        min-height: 250px;
+        > img {
+            min-height: 170px;
+        }
+    }
+}

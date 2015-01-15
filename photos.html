@@ -6,16 +6,14 @@ layout: default
    <ng-view></ng-view>
     
 </div>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.2/fotorama.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.2/fotorama.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-resource.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.js"></script>
+<script src="/js/lightbox.js"></script>
+<script src="/js/angular.js"></script>
+<script src="/js/angular-resource.js"></script>
+<script src="/js/angular-route.js"></script>
 
 <script>
 (function() {
-    angular.module('photos', ['ngRoute', 'ngResource'])
+angular.module('photos', ['ngRoute', 'ngResource'])
     .config(function($routeProvider, $locationProvider) {
       $routeProvider
        .when('/:albumId', {
@@ -65,15 +63,6 @@ layout: default
         }).$promise.then(function(data) {
             $scope.photos = data.response.items;
         })
-    })
-    .directive('fotorama', function() {
-        return {
-            controller: function($element, $scope) {
-                $scope.$on('repeat.last', function() {
-                    $element.addClass('fotorama').fotorama();
-                });                
-            }
-        }
     })
     .directive('counterNotifier', function () {
         return {
