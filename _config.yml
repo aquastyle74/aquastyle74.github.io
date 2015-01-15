@@ -1,6 +1,6 @@
 # Site settings
 title: Центр подводного плавания Аквастиль 
-email: your-email@domain.com
+email: info@aquastyl74.ru
 description: >
   В нашем дайвинг-центре вы можете пройти обучение дайвингу 
   под руководством опытных инструкторов. Зимой занятия по дайвингу проводятся
@@ -20,7 +20,7 @@ image:
       width: 350
     half:
       width: 400
-      height: 400
+      height: AUTO
 
 # Build settings
 markdown: kramdown
