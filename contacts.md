@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Контакты
-permalink: /contacts/
+
 ---
 
 Leo	Директор

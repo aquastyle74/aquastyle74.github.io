@@ -8,6 +8,17 @@ description: >
   Летом обучения дайвингу проходят на озере Увильды, база отдыха «Янтарь».
 baseurl: ""
 url: "http://aqst.summerisgone.com"
+collections:
+  diving:
+    output: true
+  podvox:
+    output: true
+  voleybol:
+    output: true
+  ozdorovitelnyj-fridajving:
+    output: true
+  info:
+    output: true
 
 image:
   source: images
