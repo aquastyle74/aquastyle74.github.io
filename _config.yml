@@ -7,7 +7,7 @@ description: >
   в бассейне «Юбилейный», ул.40 лет Октября 31а.
   Летом обучения дайвингу проходят на озере Увильды, база отдыха «Янтарь».
 baseurl: ""
-url: "http://aqst.summerisgone.com"
+url: "http://www.aquastyl74.ru"
 collections:
   diving:
     output: true
@@ -35,3 +35,7 @@ image:
 
 # Build settings
 markdown: kramdown
+
+sitemap:
+    file: "/sitemap.xml"
+    change_frequency_name: "weekly"
