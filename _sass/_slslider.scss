@@ -1,5 +1,5 @@
 .sl-slider-wrapper {
-	height: 400px;
+	height: 600px;
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
@@ -138,6 +138,12 @@
 	z-index: 100;
 	p {
 		font-size: 20pt;
+	}
+}
+
+.demo-2 .sl-slider {
+	a {
+		color: white !important;
 	}
 }
 
@@ -480,8 +486,14 @@
 .demo-2 .bg-img-1 {	background-image: url(../images/slider1.jpg);}
 .demo-2 .bg-img-2 {	background-image: url(../images/slider2.jpg);}
 .demo-2 .bg-img-3 {	background-image: url(../images/slider3.jpg);}
-.demo-2 .bg-img-4 {	background-image: url(../images/slider4.jpg);}
-.demo-2 .bg-img-5 {	background-image: url(../images/slider5.jpg);}
+.demo-2 .bg-img-4 {
+	background-image: url(../images/slider4.jpg);
+	background-size: 80% 80%;
+}
+.demo-2 .bg-img-5 {
+	background-image: url(../images/slider5.jpg);
+	background-size: 80% 80%;
+}
 .demo-2 .bg-img-6 {	background-image: url(../images/slider6.jpg);}
 .demo-2 .bg-img-7 {	background-image: url(../images/slider7.jpg);}
 .demo-2 .bg-img-8 {	background-image: url(../images/slider8.jpg);}
