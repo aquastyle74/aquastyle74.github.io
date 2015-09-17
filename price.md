@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Прайс на подводное плавание
+published: true
 ---
+
 
 <table class="table table-striped">
 <tr>
@@ -15,7 +17,7 @@ title: Прайс на подводное плавание
 </td>
 <td markdown="1">
 
-15000р.
+18000р.
 
 </td>
 
