@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Контакты
-
+published: true
 ---
+
 
 ## Центр подводного плавания Аквастиль
 
@@ -18,6 +19,6 @@ title: Контакты
 
 e-mail: [aquastyl74@mail.ru](mailto:aquastyl74@mail.ru), [chel2353524gmail.com](mailto:chel2353524gmail.com)
 
-сайт: [www.aquastyl74.ru](http://www.aquastyl74.ru), [аквастиль74.рф](http://аквастиль74.рф)
+сайт: [www.aquastyle74.ru](http://www.aquastyl74.ru), [аквастиль74.рф](http://аквастиль74.рф)
 
 Группа ВКонтакте: [aquastyl74](http://vk.com/aquastyl74)
