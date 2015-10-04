@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-host: www.aquastyl74.ru
-sitemap: http://www.aquastyl74.ru/sitemap.xml
+host: www.aquastyle74.ru
+sitemap: http://www.aquastyle74.ru/sitemap.xml
